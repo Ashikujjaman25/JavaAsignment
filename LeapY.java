@@ -1,25 +1,17 @@
- 
-package JavaAsignment;
- 
- 
+ package JavaAsignment;
+
 import java.util.Scanner;
 
-public class LeapY{
-
+public class LeapY {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Get user input for the year
+        // Get user input and check leap year in one step
         System.out.print("Enter a year: ");
         int year = scanner.nextInt();
 
-        // Check if the year is a leap year
-        boolean isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
-
-        // Output the result
-        System.out.println(year + (isLeapYear ? " is a leap year." : " is not a leap year."));
+        System.out.println(year + ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0 ? " is a leap year." : " is not a leap year."));
 
         scanner.close();
     }
 }
-

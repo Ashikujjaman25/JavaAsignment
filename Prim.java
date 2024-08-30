@@ -1,7 +1,7 @@
+ package JavaAsignment;
 
-package JavaAsignment;
- 
 import java.util.Scanner;
+
 public class Prim {
 
     public static void main(String[] args) {
@@ -11,20 +11,32 @@ public class Prim {
         System.out.print("Enter a number: ");
         int number = scanner.nextInt();
 
-        // Assume the number is prime until proven otherwise
-        boolean isPrime = number > 1;
-
-        // Check divisibility
-        for (int i = 2; i <= number / 2; i++) {
-            if (number % i == 0) {
-                isPrime = false;
-                break;
-            }
+        // Check if the number is prime
+        if (isPrime(number)) {
+            System.out.println(number + " is a prime number.");
+        } else {
+            System.out.println(number + " is not a prime number.");
         }
 
-        // Output the result
-        System.out.println(number + (isPrime ? " is a prime number." : " is not a prime number."));
-
         scanner.close();
+    }
+
+    // Method to check if a number is prime
+    public static boolean isPrime(int number) {
+        if (number <= 1) {
+            return false;
+        }
+        if (number == 2 || number == 3) {
+            return true;
+        }
+        if (number % 2 == 0 || number % 3 == 0) {
+            return false;
+        }
+        for (int i = 5; i * i <= number; i += 6) {
+            if (number % i == 0 || number % (i + 2) == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }

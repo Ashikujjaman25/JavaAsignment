@@ -1,47 +1,27 @@
- 
 package JavaAsignment;
 
- public class Stringmeth{
+public class Stringmeth {
     public static void main(String[] args) {
         // Create and initialize strings
-        String str1 = "Hello";
-        String str2 = "World";
-        String str3 = "hello";
-        
+        String firstName = "John";
+        String lastName = "Doe";
+
         // Concatenation
-        String concatStr = str1 + " " + str2;
-        System.out.println("Concatenation: " + concatStr);
-
-        // Comparison
-        boolean isEqual = str1.equals(str3);
-        System.out.println("Are 'str1' and 'str3' equal? " + isEqual);
-
-        boolean isEqualIgnoreCase = str1.equalsIgnoreCase(str3);
-        System.out.println("Are 'str1' and 'str3' equal (ignoring case)? " + isEqualIgnoreCase);
+        String fullName = firstName.concat(" ").concat(lastName);
+        System.out.println("Full Name: " + fullName);
 
         // Length
-        int length = concatStr.length();
-        System.out.println("Length of concatenated string: " + length);
+        System.out.println("Full Name Length: " + fullName.length());
 
         // Substring
-        String subStr = concatStr.substring(6, 11); // "World"
-        System.out.println("Substring (index 6 to 11): " + subStr);
+        System.out.println("Last Name: " + fullName.substring(5));
 
         // Replace
-        String replacedStr = concatStr.replace("World", "Java");
-        System.out.println("After replacement: " + replacedStr);
+        String replacedName = fullName.replace("John", "Jane");
+        System.out.println("Replaced Name: " + replacedName);
 
-        // Conversion to uppercase
-        String upperCaseStr = concatStr.toUpperCase();
-        System.out.println("Uppercase: " + upperCaseStr);
-
-        // Conversion to lowercase
-        String lowerCaseStr = concatStr.toLowerCase();
-        System.out.println("Lowercase: " + lowerCaseStr);
-
-        // Trim whitespace
-        String paddedStr = "  Trim me!  ";
-        String trimmedStr = paddedStr.trim();
-        System.out.println("Trimmed string: '" + trimmedStr + "'");
+        // Uppercase and Lowercase
+        System.out.println("Uppercase: " + fullName.toUpperCase());
+        System.out.println("Lowercase: " + fullName.toLowerCase());
     }
 }

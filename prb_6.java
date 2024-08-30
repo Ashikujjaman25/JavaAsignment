@@ -1,47 +1,46 @@
- 
-package JavaAsignment;
+ package JavaAsignment;
 // Base class
-class Animal {
-    String name;
+class Vehicle {
+    String brand;
 
-    Animal(String name) {
-        this.name = name;
+    Vehicle(String brand) {
+        this.brand = brand;
     }
 
-    void makeSound() {
-        System.out.println("Some generic animal sound.");
+    void honk() {
+        System.out.println("Beep Beep!");
     }
 
     void displayInfo() {
-        System.out.println("Animal Name: " + this.name);
+        System.out.println("Vehicle Brand: " + this.brand);
     }
 }
 
 // Derived class
-class Dog extends Animal {
-    String breed;
+class Car extends Vehicle {
+    String model;
 
-    Dog(String name, String breed) {
-        super(name);
-        this.breed = breed;
+    Car(String brand, String model) {
+        super(brand);
+        this.model = model;
     }
 
     @Override
-    void makeSound() {
-        System.out.println("Woof Woof!");
+    void honk() {
+        System.out.println("Car horn: Honk Honk!");
     }
 
     void displayInfo() {
         super.displayInfo();
-        System.out.println("Dog Breed: " + this.breed);
+        System.out.println("Car Model: " + this.model);
     }
 }
 
 // Main class
 public class prb_6 {
     public static void main(String[] args) {
-        Dog myDog = new Dog("Buddy", "Golden Retriever");
-        myDog.makeSound();
-        myDog.displayInfo();
+        Car myCar = new Car("Toyota", "Corolla");
+        myCar.honk();
+        myCar.displayInfo();
     }
 }
